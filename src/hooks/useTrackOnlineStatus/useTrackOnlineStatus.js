@@ -2,6 +2,7 @@ import { useEffect, useState } from 'react'
 
 function useTrackOnlineStatus() {
   const [status, setStatus] = useState(null)
+
   const handleOnline = () => {
     setStatus('online')
   }

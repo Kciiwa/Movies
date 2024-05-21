@@ -6,15 +6,16 @@ function PosterImage({ posterPath }) {
   if (posterPath)
     return (
       <img
+        className="poster-image"
         src={`${POSTER_URL}${posterPath}`}
         alt="poster"
-        style={{ marginLeft: '-24px', marginTop: '-24px' }}
+        // style={{ marginLeft: '-24px', marginTop: '-24px' }}
+        // style={{ height: '279px' }}
       />
     )
   return (
     <img
-      style={{ marginLeft: '-24px', marginTop: '-24px' }}
-      className="poster"
+      style={{ height: '279px' }}
       src="https://multfilms.online/uploads/poster_none.png"
       alt="poster is not defined"
     />

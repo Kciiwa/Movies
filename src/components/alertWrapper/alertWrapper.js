@@ -5,7 +5,7 @@ import useTrackOnlineStatus from '../../hooks/useTrackOnlineStatus/useTrackOnlin
 
 function AlertWrapper() {
   const { status } = useTrackOnlineStatus()
-  console.log(status)
+  // console.log(status)
 
   const props = {
     online: { message: 'Success!', type: 'success' },

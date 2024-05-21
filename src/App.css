@@ -1,11 +1,29 @@
+@font-face {
+  font-family: 'Inter UI';
+  src: url(./fonts/Inter-UI/Inter-UI-Regular.otf);
+  font-weight: normal;
+}
+
+@font-face {
+  font-family: 'Inter UI';
+  src: url(./fonts/Inter-UI/Inter-UI-Medium.otf);
+  font-weight: 500;
+}
+
+@font-face {
+  font-family: 'Inter UI';
+  src: url(./fonts/Inter-UI/Inter-UI-Bold.otf);
+  font-weight: bold;
+}
+
 * {
   margin: 0;
   padding: 0;
-  font-family:
+  /* font-family:
     Inter UI,
     Arial,
     Helvetica,
-    sans-serif;
+    sans-serif; */
 }
 
 body {

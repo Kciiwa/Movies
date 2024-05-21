@@ -3,16 +3,40 @@
   border-radius: 0;
   width: 100%;
   gap: 16px;
+
+  height: 279px;
+  box-shadow: 4px 4px 12px -3px rgba(34, 60, 80, 0.2);
+  max-width: 451px;
+  padding: 0;
+  overflow: hidden;
 }
 
 .poster {
   width: 185px;
 }
 
-.ant-card-body {
-  padding: 0 !important;
+.info {
+  padding-top: 16px;
+  font-family:
+    Inter UI,
+    Arial,
+    Helvetica,
+    sans-serif;
+  letter-spacing: 0%;
 }
 
-/* .wrapper:global:ant-card-body {
-  padding: 0;
-} */
+.info-title {
+  font-size: 20px;
+  line-height: 28px;
+}
+
+.info-release-date {
+  color: #827e7e;
+  font-size: 12px;
+  line-height: 22px;
+}
+
+.info-overview {
+  font-size: 12px;
+  line-height: 22px;
+}
