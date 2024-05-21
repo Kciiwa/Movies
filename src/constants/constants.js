@@ -1,0 +1,7 @@
+export const API_KEY = '371e5852e6234e2bfee5622b68493a43'
+export const API_URL = 'https://api.themoviedb.org/3/search/movie'
+export const INCLUDE_ADULT = 'false'
+export const LANGUAGE = 'en-US'
+export const PAGE = '1'
+export const QUERY = 'return'
+export const POSTER_URL = 'https://image.tmdb.org/t/p/w185'
