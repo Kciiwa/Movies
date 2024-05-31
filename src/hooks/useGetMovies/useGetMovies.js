@@ -6,7 +6,7 @@ import { API_URL, API_KEY, INCLUDE_ADULT, LANGUAGE } from '../../constants/const
 const fetchMovies = async (searchQuery, currentPage) => {
   try {
     const response = await fetch(
-      `${API_URL}?api_key=${API_KEY}&include_adult=${INCLUDE_ADULT}&language=${LANGUAGE}&page=${currentPage}&query=${searchQuery}`
+      `${API_URL}/3/search/movie?api_key=${API_KEY}&include_adult=${INCLUDE_ADULT}&language=${LANGUAGE}&page=${currentPage}&query=${searchQuery}`
     )
     const data = await response.json()
     return data

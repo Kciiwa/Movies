@@ -3,8 +3,6 @@ import { Pagination } from 'antd'
 import './moviePagination.css'
 
 function MoviePagination({ currentPage, setCurrentPage, totalPages }) {
-  // const [currentPage, setCurrentPage] = useState(1)
-
   const onChangePage = (page) => setCurrentPage(page)
 
   return (

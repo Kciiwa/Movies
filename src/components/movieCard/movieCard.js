@@ -23,8 +23,6 @@ function MovieCard({
   const [rating, setRating] = useState(0)
   const rateMovie = useMovieRating(guestSessionId)
 
-  console.log(genres)
-
   const genresNames = genres.map((genre) => (
     <p className="info-genre" key={genre.id}>
       {genre.name}
@@ -58,7 +56,6 @@ function MovieCard({
     if (onNewRating) {
       onNewRating()
     }
-    // console.log(`id ${id}, value ${ratingValue}, guestSessionId ${guestSessionId}`)
   }
 
   return (
@@ -77,25 +74,6 @@ function MovieCard({
         <Rating id={id} rating={rating} onRatingChange={onRatingChange} activeTab={activeTab} />
       </div>
     </div>
-
-    // <div className="movie-card">
-    //   <div className="container1">
-    //     <PosterImage posterPath={posterPath} />
-    //     <div className="info">
-    //       <h5 className="info-title">{truncatedTitle}</h5>
-    //       <div className="info-rating" style={ratingStyle}>
-    //         {rating}
-    //       </div>
-    //       <p className="info-release-date">{formatReleaseDate}</p>
-    //       <div className="info-genres-list">{genresNames}</div>
-
-    //       <Rating id={id} rating={rating} onRatingChange={onRatingChange} activeTab={activeTab} />
-    //     </div>
-    //   </div>
-    //   <p className="info-overview" style={{ wordBreak: 'break-word' }}>
-    //     {truncatedOverview}
-    //   </p>
-    // </div>
   )
 }
 

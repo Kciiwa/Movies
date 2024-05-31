@@ -1,7 +1,7 @@
 import { useContext, useEffect } from 'react'
 
 import GenreContext from '../../context/genreContext/genreContext'
-import { API_KEY } from '../../constants/constants'
+import { API_KEY, API_URL } from '../../constants/constants'
 
 function useGetGenres() {
   const { setGenres } = useContext(GenreContext)
@@ -9,11 +9,8 @@ function useGetGenres() {
   useEffect(() => {
     const fetchGenres = async () => {
       try {
-        const response = await fetch(
-          `https://api.themoviedb.org/3/genre/movie/list?api_key=${API_KEY}`
-        )
+        const response = await fetch(`${API_URL}/3/genre/movie/list?api_key=${API_KEY}`)
         const data = await response.json()
-        // console.log(`fetched genres: ${JSON.stringify(data.genres)}`)
         setGenres(data.genres)
       } catch (error) {
         console.error('Failed to load genres: ', error.message)

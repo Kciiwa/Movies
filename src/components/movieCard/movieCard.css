@@ -13,10 +13,6 @@
   transition: all 0.3s ease;
 }
 
-/* .movie-card:hover {
-  transform: scale(1.01);
-} */
-
 .poster {
   width: 185px;
 }
@@ -106,7 +102,6 @@
 
 @media (max-width: 768px) {
   .movie-card {
-    /* overflow: auto; */
     height: 245px;
     box-shadow: 0px 6px 10px 0px rgba(34, 60, 80, 0.2);
   }
@@ -136,7 +131,4 @@
     height: 20px;
     width: 100%;
   }
-  /* .info-genre {
-    flex-shrink: 0;
-  } */
 }

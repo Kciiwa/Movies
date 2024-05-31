@@ -37,11 +37,6 @@ body {
   width: 200px !important;
 }
 
-/* .app-wrapper {
-  display: flex;
-  flex-direction: column;
-} */
-
 .app-wrapper {
   max-width: 1060px;
   margin: 0 auto;

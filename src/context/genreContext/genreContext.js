@@ -14,7 +14,6 @@ export function GenreProvider({ children }) {
           `https://api.themoviedb.org/3/genre/movie/list?api_key=${API_KEY}`
         )
         const data = await response.json()
-        // console.log(`fetched genres: ${JSON.stringify(data.genres)}`)
         setGenres(data.genres)
       } catch (error) {
         console.error('Failed to load genres: ', error.message)

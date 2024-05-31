@@ -1,10 +1,12 @@
 import { debounce } from 'lodash'
 import { useCallback, useEffect, useState } from 'react'
 
+import { API_URL } from '../../constants/constants'
+
 const fetchRatedMovies = async (guestSessionId) => {
   try {
     const response = await fetch(
-      `https://api.themoviedb.org/3/guest_session/${guestSessionId}/rated/movies?api_key=371e5852e6234e2bfee5622b68493a43`
+      `${API_URL}/3/guest_session/${guestSessionId}/rated/movies?api_key=371e5852e6234e2bfee5622b68493a43`
     )
     const data = await response.json()
     return data
@@ -26,7 +28,6 @@ function useGetRatedMovies(guestSessionId) {
       }
       setErrorMessage(null)
       setRatedMovies(res.results)
-      // setTotalPages(res.total_pages)
     }, 200),
     []
   )
