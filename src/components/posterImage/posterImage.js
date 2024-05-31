@@ -2,6 +2,7 @@ import React, { useState } from 'react'
 import { Spin } from 'antd'
 
 import { POSTER_URL } from '../../constants/constants'
+import './posterImage.css'
 
 function PosterImage({ posterPath }) {
   const [isImageLoading, setIsImageLoading] = useState(true)
@@ -26,12 +27,7 @@ function PosterImage({ posterPath }) {
           onLoad={handleImageLoaded}
         />
       ) : (
-        <img
-          style={{ height: '279px' }}
-          src="https://multfilms.online/uploads/poster_none.png"
-          alt="poster is not defined"
-          onLoad={handleImageLoaded}
-        />
+        <p>Image is not defined</p>
       )}
     </div>
   )

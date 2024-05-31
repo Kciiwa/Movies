@@ -37,7 +37,7 @@ function MovieCard({
 
   const isValidDate = releaseDate instanceof Date && !Number.isNaN(releaseDate)
   const formatReleaseDate = isValidDate ? format(releaseDate, 'MMMM d, yyyy', { locale: enGB }) : ''
-  const truncatedOverview = useTruncatedText(overview, 150)
+  const truncatedOverview = useTruncatedText(overview, 100)
   const truncatedTitle = useTruncatedText(title, 35)
 
   let ratingStyle = {}
@@ -77,6 +77,25 @@ function MovieCard({
         <Rating id={id} rating={rating} onRatingChange={onRatingChange} activeTab={activeTab} />
       </div>
     </div>
+
+    // <div className="movie-card">
+    //   <div className="container1">
+    //     <PosterImage posterPath={posterPath} />
+    //     <div className="info">
+    //       <h5 className="info-title">{truncatedTitle}</h5>
+    //       <div className="info-rating" style={ratingStyle}>
+    //         {rating}
+    //       </div>
+    //       <p className="info-release-date">{formatReleaseDate}</p>
+    //       <div className="info-genres-list">{genresNames}</div>
+
+    //       <Rating id={id} rating={rating} onRatingChange={onRatingChange} activeTab={activeTab} />
+    //     </div>
+    //   </div>
+    //   <p className="info-overview" style={{ wordBreak: 'break-word' }}>
+    //     {truncatedOverview}
+    //   </p>
+    // </div>
   )
 }
 
