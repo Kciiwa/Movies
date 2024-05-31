@@ -1,0 +1,16 @@
+.pagination-wrapper {
+  display: flex;
+  justify-content: center;
+}
+
+.ant-pagination .ant-pagination-item-active {
+  background-color: #1890ff;
+}
+
+.ant-pagination .ant-pagination-item-active:hover a {
+  color: #fff !important;
+}
+
+.ant-pagination .ant-pagination-item-active a {
+  color: #fff !important;
+}

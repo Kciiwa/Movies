@@ -1,24 +1,39 @@
-import React from 'react'
+import React, { useState } from 'react'
+import { Spin } from 'antd'
 
 import { POSTER_URL } from '../../constants/constants'
 
 function PosterImage({ posterPath }) {
-  if (posterPath)
-    return (
-      <img
-        className="poster-image"
-        src={`${POSTER_URL}${posterPath}`}
-        alt="poster"
-        // style={{ marginLeft: '-24px', marginTop: '-24px' }}
-        // style={{ height: '279px' }}
-      />
-    )
+  const [isImageLoading, setIsImageLoading] = useState(true)
+
+  const handleImageLoaded = () => {
+    setIsImageLoading(false)
+  }
+
   return (
-    <img
-      style={{ height: '279px' }}
-      src="https://multfilms.online/uploads/poster_none.png"
-      alt="poster is not defined"
-    />
+    <div className="poster-container">
+      {isImageLoading && (
+        <div className="spin-wrapper">
+          <Spin className="poster-spin" />
+        </div>
+      )}
+
+      {posterPath ? (
+        <img
+          className="poster-image"
+          src={`${POSTER_URL}${posterPath}`}
+          alt="poster"
+          onLoad={handleImageLoaded}
+        />
+      ) : (
+        <img
+          style={{ height: '279px' }}
+          src="https://multfilms.online/uploads/poster_none.png"
+          alt="poster is not defined"
+          onLoad={handleImageLoaded}
+        />
+      )}
+    </div>
   )
 }
 

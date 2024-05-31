@@ -1,20 +1,77 @@
-import React from 'react'
-import { Spin } from 'antd'
+// import React, { useContext } from 'react'
+
+// import MovieCard from '../movieCard/movieCard'
+// import './moviesList.css'
+// import GenreContext from '../../context/genreContext/genreContext'
+
+// function MoviesList({ movies, guestSessionId, onNewRating, activeTab }) {
+//   console.log(`from movieList ${guestSessionId}`)
+
+//   const genres = useContext(GenreContext)
+
+//   console.log('Genres inside list:', genres)
+
+//   const renderMovie = ({
+//     title,
+//     id,
+//     poster_path: posterPath,
+//     release_date: releaseDate,
+//     overview,
+//     rating = 0,
+//   }) => {
+//     const releaseDateObj = releaseDate && new Date(releaseDate)
+
+//     return (
+//       <MovieCard
+//         title={title}
+//         key={id}
+//         posterPath={posterPath}
+//         releaseDate={releaseDateObj}
+//         overview={overview}
+//         id={id}
+//         guestSessionId={guestSessionId}
+//         rating={rating}
+//         onNewRating={onNewRating}
+//         activeTab={activeTab}
+//       />
+//     )
+//   }
+
+//   return (
+//     <div className="movies-list-wrapper">
+//       <ul className="movies-list">{movies.map(renderMovie)}</ul>
+//     </div>
+//   )
+// }
+
+// export default MoviesList
+
+import React, { useContext } from 'react'
 
 import MovieCard from '../movieCard/movieCard'
 import './moviesList.css'
-import useGetMovies from '../../hooks/useGetMovies/useGetMovies'
+import GenreContext from '../../context/genreContext/genreContext'
 
-function MoviesList() {
-  const { movies, isLoading } = useGetMovies()
+function MoviesList({ movies, guestSessionId, onNewRating, activeTab }) {
+  // console.log(`from movieList ${guestSessionId}`)
+
+  const genres = useContext(GenreContext)
+
+  // console.log('Genres inside list:', genres)
+
   const renderMovie = ({
     title,
     id,
     poster_path: posterPath,
     release_date: releaseDate,
     overview,
+    rating = 0,
+    genre_ids: genreIds,
   }) => {
     const releaseDateObj = releaseDate && new Date(releaseDate)
+
+    // Найти жанры для этого фильма
+    const movieGenres = genreIds.map((genreId) => genres.find((genre) => genre.id === genreId))
 
     return (
       <MovieCard
@@ -23,11 +80,15 @@ function MoviesList() {
         posterPath={posterPath}
         releaseDate={releaseDateObj}
         overview={overview}
+        id={id}
+        guestSessionId={guestSessionId}
+        rating={rating}
+        onNewRating={onNewRating}
+        activeTab={activeTab}
+        genres={movieGenres} // Передать список жанров в MovieCard
       />
     )
   }
-
-  if (isLoading) return <Spin fullscreen size="large" delay={3000} />
 
   return (
     <div className="movies-list-wrapper">
