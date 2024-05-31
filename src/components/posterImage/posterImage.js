@@ -13,22 +13,20 @@ function PosterImage({ posterPath }) {
 
   return (
     <div className="poster-container">
-      {isImageLoading && (
+      {isImageLoading && posterPath && (
         <div className="spin-wrapper">
           <Spin className="poster-spin" />
         </div>
       )}
-
-      {posterPath ? (
+      {posterPath && (
         <img
           className="poster-image"
           src={`${POSTER_URL}${posterPath}`}
           alt="poster"
           onLoad={handleImageLoaded}
         />
-      ) : (
-        <p>Image is not defined</p>
       )}
+      {!posterPath && <p className="no-poster">Image is not defined</p>}{' '}
     </div>
   )
 }
